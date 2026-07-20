@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn Python, object-oriented programming, and applied math offline.">
+    <title>LearnLab</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="icon-button mobile-only" id="menu-button" type="button" aria-label="Open curriculum" title="Open curriculum">☰</button>
+        <a class="brand" href="#" aria-label="LearnLab home">
+          <span class="brand-mark" aria-hidden="true">&gt;_</span>
+          <span>LearnLab</span>
+        </a>
+        <div class="progress-summary" aria-live="polite">
+          <span id="progress-label">0 of 0 complete</span>
+          <span class="progress-track" aria-hidden="true"><span id="progress-fill"></span></span>
+        </div>
+      </header>
+
+      <aside class="sidebar" id="sidebar" aria-label="Curriculum">
+        <div class="sidebar-heading">
+          <p class="eyebrow">Curriculum</p>
+          <button class="icon-button mobile-only" id="close-menu-button" type="button" aria-label="Close curriculum" title="Close curriculum">×</button>
+        </div>
+        <nav id="curriculum"></nav>
+      </aside>
+
+      <main class="lesson-pane" id="lesson-pane" tabindex="-1">
+        <div class="loading-state" id="loading-state">
+          <span class="spinner" aria-hidden="true"></span>
+          <p>Loading your local curriculum…</p>
+        </div>
+      </main>
+    </div>
+    <div class="sidebar-scrim" id="sidebar-scrim"></div>
+    <dialog class="ide-dialog" id="ide-dialog" aria-labelledby="ide-dialog-title">
+      <form class="ide-form" id="ide-form">
+        <div class="dialog-heading">
+          <div>
+            <p class="section-kicker">Assignment setup</p>
+            <h2 id="ide-dialog-title">Choose your IDE</h2>
+          </div>
+          <button class="icon-button" id="close-ide-dialog" type="button" aria-label="Close IDE picker" title="Close">×</button>
+        </div>
+        <label class="form-label" for="ide-select">IDE</label>
+        <select id="ide-select" name="ide"></select>
+        <div id="custom-ide-group" hidden>
+          <label class="form-label" for="custom-ide-command">Launch command</label>
+          <input id="custom-ide-command" name="custom-command" type="text" placeholder="code-insiders --reuse-window" autocomplete="off" spellcheck="false">
+        </div>
+        <p class="form-error" id="ide-form-error" role="alert"></p>
+        <div class="dialog-actions">
+          <button class="button button-secondary" id="cancel-ide-dialog" type="button">Cancel</button>
+          <button class="button button-primary" id="save-ide-button" type="submit">Save IDE</button>
+        </div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
